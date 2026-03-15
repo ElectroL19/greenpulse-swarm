@@ -57,3 +57,5 @@ Unlike a simple RAG chatbot, GreenPulse is **agentic**. It doesn't just retrieve
 * **Files:** Local PDF processing for university agricultural guidelines.
 * **Model:** Powered by **Gemini 3 Flash** for low-latency multi-agent reasoning.
 
+  
+
