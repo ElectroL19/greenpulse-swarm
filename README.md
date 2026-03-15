@@ -57,5 +57,31 @@ Unlike a simple RAG chatbot, GreenPulse is **agentic**. It doesn't just retrieve
 * **Files:** Local PDF processing for university agricultural guidelines.
 * **Model:** Powered by **Gemini 3 Flash** for low-latency multi-agent reasoning.
 
-  
+## 🛠 System Architecture Diagram
+The following diagram, generated via NotebookLM and Mermaid, illustrates the data flow between our specialized agents:
 
+```mermaid
+graph TD
+graph TD
+    %% Input Node
+    Input([Farmer Input: Location & PDF]) --> Scout
+
+    %% The Orchestrator Box
+    subgraph Swarm ["HarvestStrategistSwarm (SequentialAgent)"]
+        Scout[<b>1. ClimateScout</b><br/>Weather & Climate Risks]
+        Scout -- "weather_intel" --> Sentry
+        
+        Sentry[<b>2. BioSentry</b><br/>Pest & Disease Identification]
+        Sentry -- "bio_intel" --> Strategist
+        
+        Strategist[<b>3. FinalStrategist</b><br/>Intelligence Synthesis]
+    end
+
+    %% Output Node
+    Strategist --> Output([7-Day Tactical Farm Plan])
+
+    %% Uniform Plain Styling
+    classDef plain fill:#ffffff,stroke:#333333,stroke-width:1px,color:#000000;
+    class Input,Scout,Sentry,Strategist,Output plain;
+    
+    style Swarm fill:none,stroke:#333333,stroke-dasharray: 5 5,color:#000000
