@@ -4,6 +4,25 @@
 ## 📝 Problem Statement
 Small-scale farmers in developing regions are facing unprecedented climate volatility. While raw data (weather forecasts, pest research) exists, it is often locked in dense, unstructured PDF reports or complex scientific databases. Farmers lack an "Intelligence layer" to synthesize this data into immediate tactical actions, leading to avoidable crop failures.
 
+## 🏗️ System Architecture
+The system utilizes a **SequentialAgent** workflow where specialized agents collaborate to bridge the gap between technical research and field action.
+
+1. **ClimateScout (Weather Agent):** Analyzes real-time climate data to identify immediate physical risks like flooding or drought.
+2. **BioSentry (Research Agent):** Processes academic PDF research to extract biological threats (pests/diseases) relevant to the context.
+3. **FinalStrategist (Orchestrator):** Synthesizes weather and biological data into a numbered, 7-day tactical farm plan.
+
+## 📁 Project Structure
+- `/app`: Contains `main.py` (The Streamlit interface).
+- `/agents`: Contains `strategist.py` (Swarm logic and Agent definitions).
+- `/tools`: Contains `pdf_processor.py` (PDF text extraction and analysis).
+- `requirements.txt`: Project dependencies.
+
+## 🚀 Getting Started
+1. Clone the repo.
+2. Install dependencies: `pip install -r requirements.txt`.
+3. Set your `GOOGLE_API_KEY` in a `.env` file.
+4. Run the app: `python -m streamlit run app/main.py`.
+
 ## 🌍 UN Sustainable Development Goal (SDG) Alignment
 * **Goal 2: Zero Hunger**
 * **Goal 13: Climate Action**
