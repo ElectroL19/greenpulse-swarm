@@ -62,7 +62,6 @@ The following diagram, generated via NotebookLM and Mermaid, illustrates the dat
 
 ```mermaid
 graph TD
-graph TD
     %% Input Node
     Input([Farmer Input: Location & PDF]) --> Scout
 
